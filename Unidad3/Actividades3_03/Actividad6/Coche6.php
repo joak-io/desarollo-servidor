@@ -1,10 +1,22 @@
 <?php
 
 class Coche extends Vehiculo{
-    private int $numeroPuertas=0;
+    protected int $numeroPuertas=0;
+
+    public function __construct(
+        string $marca,
+        string $modelo,
+        int $agno,
+        int $numeroPuertas=0
+    ) {
+        parent::__construct($marca, $modelo, $agno);
+            $this->numeroPuertas=$numeroPuertas;
+    }
+
+
 }
 
 
-    parent :: __construct($marca, $)
+
 
 ?>

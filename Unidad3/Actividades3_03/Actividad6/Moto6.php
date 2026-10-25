@@ -1,9 +1,20 @@
 <?php
 
 class Moto extends Vehiculo{
-    private int $cilindrada=0;
-}
+    protected int $cilindrada=0;
 
+    public function __construct(
+        string $marca,
+        string $modelo,
+        int $agno,
+        int $cilindrada
+    ) {
+        parent::__construct($marca, $modelo, $agno);
+            $this->cilindrada=$cilindrada;
+    }
+
+
+}
 
 
 ?>

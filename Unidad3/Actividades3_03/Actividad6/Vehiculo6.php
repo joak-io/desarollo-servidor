@@ -2,13 +2,13 @@
 
 class Vehiculo{
     private string $marca;
-    private int $modelo;
+    private string $modelo;
     private int $agno;
 
 
     function __construct(
         string $marca,
-        int $modelo,
+        string $modelo,
         int $agno
     )
     {
