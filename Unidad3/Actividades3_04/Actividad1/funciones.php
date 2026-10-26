@@ -24,7 +24,6 @@
 
     function mostrarProductos($array){
         echo "<ul>";
-
             foreach ($array as $prod){
                echo"<li>$prod[0] - $prod[1] € - $prod[2] </li> ";
             }

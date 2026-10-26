@@ -1,7 +1,7 @@
 <?php
 
 class Coche extends Vehiculo{
-    protected int $numeroPuertas=0;
+    protected int $numeroPuertas=0; //Hecho con protected
 
     public function __construct(
         string $marca,

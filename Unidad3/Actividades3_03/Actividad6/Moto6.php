@@ -1,7 +1,7 @@
 <?php
 
 class Moto extends Vehiculo{
-    protected int $cilindrada=0;
+    private int $cilindrada=0;
 
     public function __construct(
         string $marca,
@@ -11,6 +11,14 @@ class Moto extends Vehiculo{
     ) {
         parent::__construct($marca, $modelo, $agno);
             $this->cilindrada=$cilindrada;
+    }
+
+    public function __get(string $nombre){
+        if($nombre === "cilindrada"){
+            return $this->cilindrada;
+        }
+        return parent::__get($nombre); //Hecho de forma correcta con 
+                                    //el get
     }
 
 
