@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Preferencias del Usuario</h1>
+    <form action="Actividad2.php" method="post">
+        <label>Nombre: </label>
+            <input type="text" name="nombre" required>
+        <br><br>
+
+        <label>Idioma</label>
+            <select name="idioma" id="opciones">
+                <option value="espanol">Español</option>
+                <option value="italiano">Italiano</option>
+                <option value="ingles">Ingles</option>¡
+            </select> <br><br>
+
+        <label>Tamaño del Texto:</label>
+            <input type="radio" name="texto" id="normal" value="normal" checked>
+                <label>Normal</label>
+            <input type="radio" name="texto" id="grande" value="grande">
+                <label>Grande</label><br><br>
+
+        <label>Mostrar informacion adicional: </label>
+            <input type="radio" name="infoAd" id="si" value="si" checked>
+                <label>Si</label>
+            <input type="radio" name="infoAd" id="no" value="no">
+                <label>No</label>
+
+        <br><br>
+        <button type="submit">Guardar Preferencias</button>
+
+
+    </form>
+</body>
+</html>
