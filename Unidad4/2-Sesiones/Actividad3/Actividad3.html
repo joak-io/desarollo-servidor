@@ -10,10 +10,10 @@
 
     <form action="Actividad3.php" method="post">
         <label>Nombre: </label>
-            <input type="text" id="nombre" required><br><br>
+            <input type="text" name="nombre" required><br><br>
 
         <label>Edad: </label>
-            <input type="number" id="edad" required><br><br>
+            <input type="number" name="edad" required><br><br>
         
         <label>Plataforma Habitual: </label>
             <select name="plataforma" id="plataformas">
@@ -24,17 +24,13 @@
             </select><br><br>
         
         <label>Géneros preferidos: </label>
-            <input type="checkbox" name="generos" id="accion">
-                <label for="accion">Accion</label>
+            <input type="checkbox" name="generos[]" value="accion"> Acccion
 
-            <input type="checkbox" name="generos" id="rpg">
-                <label for="rpg">RPG</label>
+            <input type="checkbox" name="generos[]" value="rpg">RPG
 
-            <input type="checkbox" name="generos" id="deportes">
-            <label for="deportes">Deportes</label>
+            <input type="checkbox" name="generos[]" value="deportes">Deportes
 
-            <input type="checkbox" name="generos" id="estrategia">
-                <label for="estrategia">Estrategia</label>
+            <input type="checkbox" name="generos[]" value="estrategia" >Estrategia
             <br><br>
             
 
@@ -47,7 +43,7 @@
 
         <br><br>
         <label>Horas semanales de juego: </label>
-            <input type="number" id="horasSemanas" required><br><br>
+            <input type="number" name="horasSemanas" required><br><br>
 
         <button type="submit">Enviar encuesta</button>
     </form>
