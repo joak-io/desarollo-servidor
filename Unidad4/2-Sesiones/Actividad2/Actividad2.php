@@ -10,7 +10,6 @@ session_start();
     $_SESSION["fecha"] = $fecha;
     $_SESSION["horas"] = $horas;
 
-echo "<p>Reserva actual: </p>";
-echo "<p>Sala: " . $_SESSION["sala"] . "</p>";
-echo "<p>Fecha: " . $_SESSION["fecha"] . "</p>";
-echo "<p>Hora: " . $_SESSION["horas"] . "</p>";
+echo "<p>Reserva realizada</p>";
+
+echo "<a href='Confirmacion2.php'>Pagina Confirmación</a>";
