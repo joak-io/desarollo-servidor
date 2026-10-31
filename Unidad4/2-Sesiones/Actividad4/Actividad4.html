@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Carrito de compra</h1>
+
+    <form action="Actividad4.php" method="post">
+        <label>Producto: </label>
+            <select name="productos">
+                <option value="portatil">Portatil - 800€ </option>
+                <option value="Monitor">Monitor - 200€</option>
+                <option value="Teclado">Teclado - 40€</option>
+                <option value="Ratón">Ratón - 20€</option>
+                <option value="Altavoces">Altavoces - 35€</option>
+                <option value="Webcam">Webcam - 50€</option>
+            </select><br><br>
+
+        <label>Accion: </label><br><br>
+            <input type="radio" value="anade" name="accion">Añadir Producto<br>
+            <input type="radio" value="elimina" name="accion">Eliminar Producto<br>
+            <input type="radio" value="vacia" name="accion">Vaciar Carrito
+
+
+        <button type="submit">Realizar Accion</button>
+
+    </form>
+
+</body>
+</html>
