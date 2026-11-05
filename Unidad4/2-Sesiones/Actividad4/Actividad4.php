@@ -1,7 +1,6 @@
 <?php
 
-$producto = $_POST["productos"];
-$accion = $_POST["accion"];
+
 
 $productos=[
     "Portátil" => 800,
@@ -13,25 +12,58 @@ $productos=[
 ];
 
 
-session_start();
+
 if(!isset($_SESSION["carrito"])){
     $_SESSION["carrito"]=[]; //un array que contiene el producto y la cantidad
-    $_SESSION["accion"]=$accion;//si isseet session
+}
 
+if(isset($_POST["accion"]) && isset($_POST["productos"])){
+    $producto = $_POST["productos"];
+    $accion = $_POST["accion"];
 
-    function addProducto($producto){
-        $cantidad=0;
-        if(isset($producto, $_SESSION["carrito"]) == false){
-            $_SESSION["carrito"][$producto] = $cantidad++;
-            echo "<p>Elemento añadido por primera vez al array</p>";
-            echo $_SESSION["carrito"]["$producto"];
-        }else if(in_array($producto, $_SESSION["carrito"])){
-            $_SESSION["carrito"][$producto] = $cantidad++;
-            echo "<p>El producto ya se encontraba. Se ha actualizado la cantidad $cantidad </p>";
+    if ($accion === "anade"){
+        if(isset($_SESSION["carrito"][$producto])){
+            $_SESSION["carrito"][$producto]++;
+        }else{
+            $_SESSION["carrito"][$producto] = 1;
         }
-    }
+        echo "<p>Producto añadido al carrito</p>";
 
-    if($_SESSION["accion"]=="anade"){
-        addProducto($producto);
+    }else if($accion === "elimina"){
+        if(isset($_SESSION["carrito"][$producto])){
+            unset($_SESSION["carrito"][$producto]);
+            echo "<p>Producto eliminado del carrito</p>";
+        }else{
+            echo "<p>El producto no estaba en el carrito</p>";    
+        }
+        
+
+    }else if($accion==="vaciar"){
+        $_SESSION["carrito"]=[];
+        echo "<p>Se ha vaciado el carrito</p>";    
     }
+}
+echo "<h1>Carrito de compras</h1>";
+
+if(count($_SESSION["carrito"])===0){
+    echo "<p>El carrito está vacio</p>";
+}else{
+    $total=0;
+
+    echo "<ul>";
+    foreach ($_SESSION["carrito"] as $producto->$cantidad){
+        $precio = $productos[$producto];
+        $subtotal = $precio * $cantidad;
+        $total = $total + $subtotal;
+
+        echo "<li>";
+        echo $producto . " - ";
+        echo $precio . " € x ";
+        echo $cantidad . " = ";
+        echo $subtotal . " €";
+        echo "</li>";
+    }
+    echo "</ul>";
+
+    echo "<h2>Total: " . $total . "€ </h2>";
 }
