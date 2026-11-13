@@ -22,5 +22,14 @@ class AccesoLibro
         return $libros;
     }
 
-    
+    public static function buscarPorId($id)
+    {
+        $libros = self::listar();
+        foreach ($libros as $libro){
+            if ($libro ->id === $id){
+                return $libro;
+            }
+        }
+        return $libro;
+    }
 }

@@ -32,12 +32,22 @@ switch ($ruta) {
 
     // Listado de libros
     case "/libros":
+        
         $controlador->listar();
         break;
+    
+    case "/libros/nuevo":
+        $controlador->nuevo();
+        break;
+
+    
 
    
     default:
-		http_response_code(404);
-		echo "Página no encontrada";
-
+        if(preg_match("#^/libro/([0-9]+)$#", $ruta, $coincidencias)){
+            $controlador->detalle($coincidencias[1]);    
+        }else{
+		    http_response_code(404);
+		    echo "Página no encontrada";
+        }
 }

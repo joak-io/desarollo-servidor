@@ -35,11 +35,11 @@
                                 <td><?= htmlspecialchars($libro->autor) ?></td>
                                 <td><?= htmlspecialchars((string)$libro->anio) ?></td>
                                 <td>
-									<a href="<?= BASE_URL ?>/libros/<?= $libro->id ?>">Ver</a>
+									<a href="<?= BASE_URL ?>/libro/<?= $libro->id ?>">Ver</a>
 
-									<a href="<?= BASE_URL ?>/libros/editar/<?= $libro->id ?>">Editar</a>
+									<a href="<?= BASE_URL ?>/libro/editar/<?= $libro->id ?>">Editar</a>
 
-									<form action="<?= BASE_URL ?>/libros/eliminar/<?= $libro->id ?>"
+									<form action="<?= BASE_URL ?>/libro/eliminar/<?= $libro->id ?>"
 										  method="POST"
 										  style="display:inline;">
 										<button type="submit">Eliminar</button>

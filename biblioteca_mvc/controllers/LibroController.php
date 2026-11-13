@@ -13,4 +13,16 @@ class LibroController {
         require __DIR__ . "/../views/libros/listado.php";
     }
 
+    public function detalle($id){
+        $libro = AccesoLibro::buscarPorId($id);
+        if( $libro !== null){
+            require __DIR__ . "/../views/libros/detalle.php";
+        } 
+    }
+
+    public function nuevo(){
+        require __DIR__ . "/../views/libros/nuevo.php";
+    }
+
+    
 }
