@@ -9,7 +9,7 @@ $validaPwd = 1234;
 session_start();
 
 
-if($usuario !=$validaUser && $pwd != $validaPwd){
+if($usuario !=$validaUser || $pwd != $validaPwd){
     echo "<p> Usuario y contrasña incorrectos. Intenta de nuevo </p>";
     echo "<a href='Actividad5.html'>Vuelve a intentar</a>";
 }else{
