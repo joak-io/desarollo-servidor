@@ -76,7 +76,15 @@ $jugador2: $victoriasJug2 partidas ganadas
 
 
 
+$mi_billete = 100;
 
+function gastar_plata($dinero) {
+    $dinero = 0; // Gastamos nuestra copia
+}
+
+gastar_plata($mi_billete);
+
+echo $mi_billete;
 
 
 
