@@ -16,13 +16,15 @@
     
     <main class="contenedor principal">
     <form action="<?= BASE_URL ?>/libro/eliminar/<?= $libro->id ?>"
+										  method="POST"
+										  style="display:inline;">
         <label>Titulo</label><br>
             <input type="text" name="titulo"><br><br>
 
         <label>Autor</label><br>
             <input type="text" name="autor"><br><br>
         
-        <label>Año</label><br>
+        <label>Año de Publicacion: </label><br>
             <input type="number" name="anio"><br><br>
 
         <button type="submit" name="anade">Añadir</button>

@@ -24,5 +24,14 @@ class LibroController {
         require __DIR__ . "/../views/libros/nuevo.php";
     }
 
+    public function crear(){
+        require __DIR__ . "/../views/libros/nuevo.php";
+
+        $titulo = $_POST["titulo"];
+        $autor = $_POST["autor"];
+        $publicacion = $_POST["anio"];
+
+        $libroNuevo = new Libro($titulo, $autor, $publicacion);
+    }
     
 }

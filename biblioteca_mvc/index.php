@@ -32,14 +32,18 @@ switch ($ruta) {
 
     // Listado de libros
     case "/libros":
-        
         $controlador->listar();
         break;
     
+    //Libro nuevo    
     case "/libros/nuevo":
         $controlador->nuevo();
         break;
 
+    // Crear libro    
+    case "/libros/crear":
+        $controlador->crear();
+        break;
     
 
    
