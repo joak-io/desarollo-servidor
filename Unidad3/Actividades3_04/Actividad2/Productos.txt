@@ -1,0 +1,11 @@
+Teclado;29.99;Periféricos
+Monitor;179.99;Pantallas
+Auriculares;49.95;Sonido
+Mosue;19.99;Periféricos
+Gabinete;79.99;Gabinetes
+Parlantes;40.95;SonidoTaza;13.45;Vajilla
+Tetera;7.45;Vajilla
+Microondas;70.54;Electrodoméstico
+Air Fryer;63.45;Electrodoméstico
+Plato Hondo;3;99
+Plato Playo;5.5;Vajilla
