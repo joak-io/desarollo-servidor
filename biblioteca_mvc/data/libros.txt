@@ -1,0 +1,6 @@
+1;El Quijote;Miguel de Cervantes;1605
+2;1984;George Orwell;1949
+3;El principito;Antoine de Saint-Exupéry;1943
+4;La sombra del viento;Carlos Ruiz Zafón;2001
+5;Fahrenheit 451;Ray Bradbury;1953
+6;El Aleph;Jorge Luis Borges;1949

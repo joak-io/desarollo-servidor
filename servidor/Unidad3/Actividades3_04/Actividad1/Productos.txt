@@ -1,0 +1,6 @@
+Teclado;29.99;Periféricos
+Monitor;179.99;Pantallas
+Auriculares;49.95;Sonido
+Mosue;19.99;Periféricos
+Gabinete;79.99;Gabinetes
+Parlantes;40.95;Sonido

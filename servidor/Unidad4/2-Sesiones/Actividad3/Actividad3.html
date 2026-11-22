@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Encuesta sobre videojuegos</h1>
+
+    <form action="Actividad3.php" method="post">
+        <label>Nombre: </label>
+            <input type="text" name="nombre" required><br><br>
+
+        <label>Edad: </label>
+            <input type="number" name="edad" required><br><br>
+        
+        <label>Plataforma Habitual: </label>
+            <select name="plataforma" id="plataformas">
+                <option value="PC">PC</option>
+                <option value="PlayStation">PlayStation</option>
+                <option value="XBOX">XBOX</option>
+                <option value="Nintendo Switch">Nintendo Switch</option>
+            </select><br><br>
+        
+        <label>Géneros preferidos: </label>
+            <input type="checkbox" name="generos[]" value="accion"> Acccion
+
+            <input type="checkbox" name="generos[]" value="rpg">RPG
+
+            <input type="checkbox" name="generos[]" value="deportes">Deportes
+
+            <input type="checkbox" name="generos[]" value="estrategia" >Estrategia
+            <br><br>
+            
+
+        <label>¿Juegas habitualmente online? </label>
+            <input type="radio" name="habitual" id="si">
+                <label for="si">Si</label>
+            
+            <input type="radio" name="habitual" id="no">
+                <label for="no">No</label>
+
+        <br><br>
+        <label>Horas semanales de juego: </label>
+            <input type="number" name="horasSemanas" required><br><br>
+
+        <button type="submit">Enviar encuesta</button>
+    </form>
+
+</body>
+</html>

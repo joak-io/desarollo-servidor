@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reserva de un Aula</h1>
+
+    <form action="Actividad2.php" method="post">
+        <label>Sala: </label>
+            <select name="sala" id="salas">
+                <option value="aulaA">Aula A</option>
+                <option value="aulaB">Aula B</option>
+                <option value="aulaC">Aula C</option>
+            </select><br><br>
+
+        <label>Dia: </label>
+            <input type="date" id="fecha" name="fecha" required>
+            <br><br>
+
+        <label>Hora: </label>
+        <input type="time" id="horas" name="horas" min="09:00" max="18:00" required>
+        <br><br>
+
+        <button type="submit">Reservar</button>
+
+    </form>
+    
+</body>
+</html>
