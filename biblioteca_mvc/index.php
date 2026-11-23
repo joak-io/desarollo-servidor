@@ -47,16 +47,23 @@ switch ($ruta) {
         $controlador->crear();
         break;
 
-    case "/libros/editar/2":
-        $controlador->editar();
-        break; 
+    //Modificar un libro
+    case "/libros/actualizar/":
+        //$controlador->modificar();
+        break;
     
+
+        
 
    
     default:
         if(preg_match("#^/libro/([0-9]+)$#", $ruta, $coincidencias)){
             $controlador->detalle($coincidencias[1]);    
-        }else{
+        }
+        else if(preg_match("#^[0-9]+$#", $ruta, $coincidencias)){
+            $controlador->editar($coincidencias[1]);
+        }
+        else{
 		    http_response_code(404);
 		    echo "Página no encontrada";
         }

@@ -52,6 +52,12 @@ class AccesoLibro
         file_put_contents(self::FICHERO, $texto, FILE_APPEND);
     }
 
+    public static function modificar($id, $libro){
+        if(self::buscarPorId($id)->id == $libro->id){
+            
+
+        }
+    }
 
 
 }

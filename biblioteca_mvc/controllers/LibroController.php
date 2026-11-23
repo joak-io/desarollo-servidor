@@ -25,11 +25,13 @@ class LibroController {
     }
 
     public function crear(){
-        if(!empty($_POST["titulo"]) && !empty($_POST["autor"]) && !empty($_POST["anio"])){
+        if(!empty($_POST["titulo"]) && 
+            !empty($_POST["autor"]) && 
+            !empty($_POST["anio"])){
+
             $titulo = $_POST["titulo"];
             $autor = $_POST["autor"];
             $publicacion = $_POST["anio"];
-
 
             $libroNuevo = new Libro(0, $titulo, $autor, $publicacion);
 
@@ -39,11 +41,27 @@ class LibroController {
         }
     }
 
-    public function editar($id){
-        $libro = AccesoLibro::buscarPorId(($id));
+    //Editar un libro (Activididad 3)
+   public function editar($id){
+        $libro = AccesoLibro::buscarPorId($id);
         if( $libro !== null){
-            require __DIR__ . "/../views/libros/detalle.php";
+            require __DIR__ . "/../views/libros/editar.php";
         } 
+    }
+
+    public function actualizar($id){
+        //Como el crear con post
+         if(
+            !empty($_POST["titulo"]) && 
+            !empty($_POST["autor"]) && 
+            !empty($_POST["anio"])){
+
+
+            $titulo = $_POST["titulo"];
+            $autor = $_POST["autor"];
+            $publicacion = $_POST["anio"];
+
+        }
     }
     
 }
