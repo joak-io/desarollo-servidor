@@ -52,16 +52,27 @@ class LibroController {
     public function actualizar($id){
         //Como el crear con post
          if(
-            !empty($_POST["titulo"]) && 
-            !empty($_POST["autor"]) && 
-            !empty($_POST["anio"])){
-
+            !empty(trim($_POST["titulo"])) && 
+            !empty(trim($_POST["autor"])) && 
+            !empty(trim($_POST["anio"]))){
 
             $titulo = $_POST["titulo"];
             $autor = $_POST["autor"];
             $publicacion = $_POST["anio"];
 
+            $libro = new Libro($id, $titulo, $autor, $publicacion);
+
+            AccesoLibro::modificar($id, $libro);
+            header('Location: ' . BASE_URL . '/libros' );
+            exit;
+
         }
+    }
+
+    public function eliminar($id){
+        AccesoLibro::eliminar(($id));
+        header('Location: ' . BASE_URL . '/libros' );
+        exit;
     }
     
 }

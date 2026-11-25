@@ -49,7 +49,7 @@ switch ($ruta) {
 
     //Modificar un libro
     case "/libros/actualizar/":
-        //$controlador->modificar();
+        //$controlador->editar();
         break;
     
 
@@ -60,8 +60,11 @@ switch ($ruta) {
         if(preg_match("#^/libro/([0-9]+)$#", $ruta, $coincidencias)){
             $controlador->detalle($coincidencias[1]);    
         }
-        else if(preg_match("#^[0-9]+$#", $ruta, $coincidencias)){
+        else if(preg_match("#^/libro/editar/([0-9]+)$#", $ruta, $coincidencias)){
             $controlador->editar($coincidencias[1]);
+        }
+        else if(preg_match("#^/libro/actualizar/([0-9]+)$#", $ruta, $coincidencias)){
+            $controlador->actualizar($coincidencias[1]);
         }
         else{
 		    http_response_code(404);

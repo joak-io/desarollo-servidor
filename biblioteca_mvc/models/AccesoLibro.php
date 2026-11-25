@@ -49,15 +49,89 @@ class AccesoLibro
             ]);
         $texto.=PHP_EOL;
 
-        file_put_contents(self::FICHERO, $texto, FILE_APPEND);
+        file_put_contents(
+            self::FICHERO, 
+            $texto, 
+            FILE_APPEND
+            );
     }
 
-    public static function modificar($id, $libro){
-        if(self::buscarPorId($id)->id == $libro->id){
-            
+    //Modifica un libro
+    public static function modificar($id, $libro) {
+		$libros = self::listar();
 
+		foreach ($libros as $i => $libroActual) {
+			if ($libroActual->id == $id) {
+				$libros[$i] = $libro;
+				break;
+			}
+		}
+		$contenido = "";
+
+		foreach ($libros as $libroActual) {
+			$contenido .= $libroActual->cadenaFichero(). PHP_EOL;
+		}
+
+		file_put_contents(self::FICHERO, $contenido);
+	}
+
+
+    // Elimina un libro.
+    public static function eliminar($id)
+    {
+        $libros = self::listar();
+        $contenido = "";
+        $encontrado = false;
+
+        foreach ($libros as $libro) {
+
+            if ($libro->id == $id) {
+                $encontrado = true;
+            } else {
+                $contenido .= $libro->cadenaFichero(). PHP_EOL;
+            }
         }
+
+        if ($encontrado) {
+            file_put_contents(self::FICHERO, $contenido);
+        }
+
+        return $encontrado;
     }
+
+    // Busca libros por título o autor.
+    public static function buscar($texto)
+    {
+        $resultado = [];
+        $libros = self::listar();
+
+        foreach ($libros as $libro) {
+
+            if (stripos($libro->titulo, $texto) !== false ||
+                stripos($libro->autor, $texto) !== false) {
+
+                $resultado[] = $libro;
+            }
+        }
+
+        return $resultado;
+    }
+	
+	 public static function siguienteId() {
+
+		$libros = self::listar();
+
+		$mayor = 0;
+
+		foreach ($libros as $libro) {
+
+			if ($libro->id > $mayor) {
+				$mayor = $libro->id;
+			}
+		}
+
+		return $mayor + 1;
+	}
 
 
 }

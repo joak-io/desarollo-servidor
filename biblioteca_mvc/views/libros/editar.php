@@ -15,19 +15,16 @@
     </header>
 
     <main class="contenedor principal">
-        <form action="<?= BASE_URL ?>/libros/actualizar"
+        <form action="<?= BASE_URL ?>/libro/actualizar/<?= $libro->id ?>"
 										  method="POST">
 
             <h2><?= htmlspecialchars($libro->titulo) ?></h2>
 
-            <p><strong>Identificador:</strong>
-                <textarea readonly>
-                    <?= htmlspecialchars($libro->id) ?> 
-                </textarea>
+            <p><strong>Identificador:</strong><br>
+                <input type="text" name="id" id="id" readonly value=<?= $id ?>>
             </p>
 
             <p><strong>Título:</strong>
-                <label>Titulo</label><br>
                 <input type="text" 
                     value="<?= htmlspecialchars($libro->titulo) ?>" 
                     name="titulo"><br><br>
@@ -36,7 +33,6 @@
 
 
             <p><strong>Autor:</strong>
-                <label>Autor</label><br>
                 <input type="text" 
                     value="<?= htmlspecialchars($libro->autor) ?>" 
                     name="autor"><br><br>
@@ -44,7 +40,6 @@
             </p>
 
             <p><strong>Año de publicación:</strong>
-                <label>Año de publicacion</label><br>
                 <input type="number" 
                     value="<?= htmlspecialchars($libro->anio) ?>"
                     name="anio"><br><br>
@@ -55,6 +50,8 @@
                 |
                 <a href="<?= BASE_URL ?>/">Inicio</a>
             </p>
+
+            <button type="submit">Actualizar</button>
         </form>
 
     </main>

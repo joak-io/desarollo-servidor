@@ -42,4 +42,13 @@ class Libro {
     public function __toString() {
         return $this->titulo . " (" . $this->anio . ")";
     }
+
+    public function cadenaFichero(){
+        return $this->id . self::SEPARADOR .
+        $this->titulo . self::SEPARADOR .
+        $this->autor . self::SEPARADOR .
+        $this->anio;
+    }
+
+
 }
