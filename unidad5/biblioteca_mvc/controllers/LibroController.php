@@ -41,15 +41,15 @@ class LibroController {
         }
     }
 
-    //Editar un libro (Activididad 3)
+//Editar un libro (Activididad 3)
    public function editar($id){
         $libro = AccesoLibro::buscarPorId($id);
         if( $libro !== null){
             require __DIR__ . "/../views/libros/editar.php";
         } 
-    }
+   }
 
-    public function actualizar($id){
+   public function actualizar($id){
         //Como el crear con post
          if(
             !empty(trim($_POST["titulo"])) && 
@@ -67,12 +67,29 @@ class LibroController {
             exit;
 
         }
-    }
+   }
 
-    public function eliminar($id){
+   public function eliminar($id){
         AccesoLibro::eliminar(($id));
         header('Location: ' . BASE_URL . '/libros' );
         exit;
+   }
+
+   public function buscar(){
+        require __DIR__ . "/../views/libros/buscar.php";
+   }
+
+    public function buscarLibro(){
+        if(!empty(trim($_GET["texto"]))
+            ){
+
+        $texto=$_GET["texto"];
+        $libros=AccesoLibro::buscar($texto);
+
+        //Cargar vista
+        require __DIR__ . "/../views/libros/listado.php";        
+        
+        }
     }
     
 }

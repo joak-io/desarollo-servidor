@@ -28,6 +28,7 @@
 
         <button type="submit" name="agrega">Agregar Libro</button>
     </form>
+    <a href="<?= BASE_URL ?>/">Volver al Menú</a>
 
     </main>
 </body>

@@ -100,20 +100,16 @@ class AccesoLibro
     }
 
     // Busca libros por título o autor.
-    public static function buscar($texto)
-    {
+    public static function buscar($texto){
         $resultado = [];
         $libros = self::listar();
 
         foreach ($libros as $libro) {
-
             if (stripos($libro->titulo, $texto) !== false ||
                 stripos($libro->autor, $texto) !== false) {
-
                 $resultado[] = $libro;
             }
         }
-
         return $resultado;
     }
 	

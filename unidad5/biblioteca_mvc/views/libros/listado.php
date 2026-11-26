@@ -49,8 +49,14 @@
                         <?php } ?>
                     </tbody>
                 </table>
+                <a href="<?= BASE_URL ?>/">Volver al Menú</a>
             <?php } else { ?>
-                <p>No hay libros en la biblioteca.</p>
+                <p>No hay libros en la biblioteca.
+
+                |
+                <a href="<?= BASE_URL ?>/">Volver al Menú</a>
+                </p>
+
             <?php } ?>
         </section>
     </main>

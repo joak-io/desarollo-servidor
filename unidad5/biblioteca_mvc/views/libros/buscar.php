@@ -10,34 +10,27 @@
     <header class="cabecera">
         <div class="contenedor">
              <h1>Biblioteca</h1>
-            <p>Detalles del libro</p>
+            <p>Busqueda del libro</p>
         </div>
     </header>
 
     <main class="contenedor principal">
 
-        <h2><?= htmlspecialchars($libro->titulo) ?></h2>
+        <form action="<?= BASE_URL ?>/libros/buscarLibro"
+										  method="GET">
+            <label>Introduce el campo del libro:</label>
+                <input type="text" name="texto" id="texto">
 
-        <p><strong>Identificador:</strong>
-            <?= htmlspecialchars($libro->id) ?>
-        </p>
+            <button type="submit">Buscar</button>
 
-        <p><strong>Título:</strong>
-            <?= htmlspecialchars($libro->titulo) ?>
-        </p>
-
-        <p><strong>Autor:</strong>
-            <?= htmlspecialchars($libro->autor) ?>
-        </p>
-
-        <p><strong>Año de publicación:</strong>
-            <?= htmlspecialchars($libro->anio) ?>
-        </p>
+        </form>
 
         <p>
             <a href="<?= BASE_URL ?>/libros">Volver al listado</a>
             |
             <a href="<?= BASE_URL ?>/">Inicio</a>
+            |
+            <a href="<?= BASE_URL ?>/">Volver al Menú</a>
         </p>
 
     </main>

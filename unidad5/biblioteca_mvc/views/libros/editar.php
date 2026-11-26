@@ -49,11 +49,13 @@
                 <a href="<?= BASE_URL ?>/libros">Volver al listado</a>
                 |
                 <a href="<?= BASE_URL ?>/">Inicio</a>
+                |
+                <a href="<?= BASE_URL ?>/">Volver al Menú</a>
             </p>
 
             <button type="submit">Actualizar</button>
         </form>
-
+        
     </main>
 
 </body>
