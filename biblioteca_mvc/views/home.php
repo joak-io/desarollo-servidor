@@ -12,11 +12,21 @@
     <p>Selecciona la operación que deseas realizar:</p>
 
     <nav>
+        <h3>Gestión de Libros</h3>
         <ul>
             <li><a href="/biblioteca_mvc/libros">Consultar libros</a></li>
             <li><a href="/biblioteca_mvc/libros/nuevo">Añadir libro</a></li>
             <li><a href="/biblioteca_mvc/libros/buscar">Buscar libros</a></li>
         </ul>
+
+        <h3>Gestión de Socios</h3>
+        <ul>
+            <li><a href="/biblioteca_mvc/socios">Consultar Socios</a></li>
+            <li><a href="/biblioteca_mvc/socios/nuevo">Añadir Socio</a></li>
+            <li><a href="/biblioteca_mvc/socios/buscar">Buscar Socios</a></li>
+        </ul>
+
+
     </nav>
 
 </body>

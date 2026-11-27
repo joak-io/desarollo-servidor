@@ -8,9 +8,9 @@ class Socio {
     private $nombre;
     private $apellidos;
     private $correo;
-    private $tel;
+    private $telefono;
 
-    public function __construct($id, $nombre = null, $apellidos = null, $correo = null, $tel=null) {
+    public function __construct($id, $nombre = null, $apellidos = null, $correo = null, $telefono=null) {
 
         // Si solo recibe un parámetro, se interpreta como una línea del fichero
         if ($nombre === null) {
@@ -21,7 +21,7 @@ class Socio {
             $this->nombre = $datos[1];
             $this->apellidos = $datos[2];
             $this->correo = $datos[3];
-            $this->tel = $datos[4];
+            $this->telefono = $datos[4];
 
         } else {
 
@@ -30,7 +30,7 @@ class Socio {
             $this->nombre = $nombre;
             $this->apellidos = $apellidos;
             $this->correo = $correo;
-            $this->tel = $tel;
+            $this->telefono = $telefono;
         }
     }
 
@@ -51,7 +51,7 @@ class Socio {
         $this->nombre . self::SEPARADOR .
         $this->apellidos . self::SEPARADOR .
         $this->correo . self::SEPARADOR .
-        $this->tel;
+        $this->telefono;
     }
 
 

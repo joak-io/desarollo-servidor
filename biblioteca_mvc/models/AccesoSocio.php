@@ -44,9 +44,10 @@ class AccesoSocio
         $socio->id = $maxId + 1;
 
         $texto=implode(";", [
-            $socio->id, $socio->titulo,  //El implode es lo contrario al explode. Une los elementos d eun array 
-            $socio->autor,$socio->anio  // en un string usando un separador
-            ]);
+            $socio->id, $socio->nombre,  //El implode es lo contrario al explode. Une los elementos d eun array 
+            $socio->apellidos, $socio->correo,  // en un string usando un separador
+            $socio->telefono
+        ]);
         $texto.=PHP_EOL;
 
         file_put_contents(
@@ -56,9 +57,9 @@ class AccesoSocio
             );
     }
 
-    //Modifica un libro
+    //Modifica un socio
     public static function modificar($id, $socio) {
-		$socios = self::listar();
+        $socios = self::listar();
 
 		foreach ($socios as $i => $socioActual) {
 			if ($socioActual->id == $id) {
@@ -77,8 +78,7 @@ class AccesoSocio
 
 
     // Elimina un libro.
-    public static function eliminar($id)
-    {
+    public static function eliminar($id){
         $socios = self::listar();
         $contenido = "";
         $encontrado = false;
@@ -105,8 +105,8 @@ class AccesoSocio
         $socios = self::listar();
 
         foreach ($socios as $socio) {
-            if (stripos($socio->titulo, $texto) !== false ||
-                stripos($socio->autor, $texto) !== false) {
+            if (stripos($socio->nombre, $texto) !== false ||
+                stripos($socio->apellidos, $texto) !== false) {
                 $resultado[] = $socio;
             }
         }
